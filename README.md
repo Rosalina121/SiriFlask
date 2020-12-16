@@ -13,7 +13,7 @@ The workflow looks kind of like this:
 
 ## Requirements
 - Python
-    - I used 3.8, shouldn't be an issue to run on other versions.
+    - I used 3.8.4, shouldn't be an issue to run on other versions.
 - Shortcuts
 - Whatever libraries and utilities you want to use to make this magic happen.
     - If you want to try the example code, `requirements.txt` should have everything you need.
