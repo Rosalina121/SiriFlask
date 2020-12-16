@@ -20,6 +20,11 @@ The workflow looks kind of like this:
     - Also the example code is written for Windows, so [NirCMD](https://www.nirsoft.net/utils/nircmd.html) (which is great!) is used for some methods, as well as Explorer.exe and other Windows utilities.
     - The `open_file` method uses Voidtools [EverythingSDK](https://www.voidtools.com/support/everything/sdk/)
 
+## Setup
+Some methods require some tinkering in code and specifying a couple of paths. If you want to save files you can change `UPLOAD_FOLDER` to wherever you want to save files.  
+
+If you'd like to use the EverythingSDK you also have to specify the `Everything32.dll` path in `DLL_PATH` in `everything.py`.
+
 ## Examples
 This repo contains a code with some examples. They might not be the best written snippets from that one guy on StackOverflow who fixed your issue and rewrote half of the app, but they work and I think they are a good place to start off.  
 Note: It's all written for Windows since as much as I'd love to I just can't stand Cortana. That means there is probably a better and safer way to do those things on Linux or macOS. Also hardly any input is validated as I stupidly trust myself and/or validation is already on the Shortcuts side.
