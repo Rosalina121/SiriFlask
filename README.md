@@ -27,7 +27,7 @@ Also almost every method returns a string, which is later spoken by Siri or a sh
 
 You can try these from `make_a_wish`:
  -  `iTunes_open` to open iTunes or literally any other application. I got tired of Cortana asking me if I want to open *iTunesHelper.exe*.
- - `play_pause` to simulate pressing a media button. It's using `pyautogui` which is also used in other examples. You can see some commented code that used the `win32api` but was hardly an elegant solution (but still a working one).
+ - `play_pause` to simulate pressing a media button. It's using `pyautogui` which is also used in other examples. You can see some commented code that used the `win32api` but it was hardly an elegant solution (but still a working one).
  - `shutdown(val)` and `abort_shutdown` are just like their CMD counterparts. One will shut down your PC after specified time (in minutes) and the other will abort it. I'm using NirCMD here however, since I just wanted to try it (and by try it I mean shutting off the PC when testing since I forgot an argument).
  - `volume(val)` sets system volume to specified amount. It accepts values from 0 to 100 and converts that to NirCMD value range. Honestly it will accept anything and at worst throw an error since i don't check wether the value is within range.
  - `audio_mute` will send a hotkey. The one in example is the one I use to mute myself on Discord. 
