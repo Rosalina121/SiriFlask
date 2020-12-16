@@ -14,11 +14,11 @@ The workflow looks kind of like this:
 ## Requirements
 - Python
     - I used 3.8.4, shouldn't be an issue to run on other versions.
-- Shortcuts
+- iOS Shortcuts
 - Whatever libraries and utilities you want to use to make this magic happen.
     - If you want to try the example code, `requirements.txt` should have everything you need.
-    - Also the example code is written for Windows, so NirCMD (which is great!) is used for some methods, as well as Explorer.exe and other Windows utilities.
-    - The `open_file` method uses Voidtools' EverythingSDK
+    - Also the example code is written for Windows, so [NirCMD](https://www.nirsoft.net/utils/nircmd.html) (which is great!) is used for some methods, as well as Explorer.exe and other Windows utilities.
+    - The `open_file` method uses Voidtools [EverythingSDK](https://www.voidtools.com/support/everything/sdk/)
 
 ## Examples
 This repo contains a code with some examples. They might not be the best written snippets from that one guy on StackOverflow who fixed your issue and rewrote half of the app, but they work and I think they are a good place to start off.  
