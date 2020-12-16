@@ -28,13 +28,6 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-def isBase64(s):
-    try:
-        return base64.b64encode(base64.b64decode(s)) == s
-    except Exception:
-        return False
-
-
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
