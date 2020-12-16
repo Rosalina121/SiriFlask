@@ -28,8 +28,8 @@ Also almost every method returns a string, which is later spoken by Siri or a sh
 You can try these from `make_a_wish`:
  -  `iTunes_open` to open iTunes or literally any other application. I got tired of Cortana asking me if I want to open *iTunesHelper.exe*.
  - `play_pause` to simulate pressing a media button. It's using `pyautogui` which is also used in other examples. You can see some commented code that used the `win32api` but it was hardly an elegant solution (but still a working one).
- - `shutdown(val)` and `abort_shutdown` are just like their CMD counterparts. One will shut down your PC after specified time (in minutes) and the other will abort it. I'm using NirCMD here however, since I just wanted to try it (and by try it I mean shutting off the PC when testing since I forgot an argument).
- - `volume(val)` sets system volume to specified amount. It accepts values from 0 to 100 and converts that to NirCMD value range. Honestly it will accept anything and at worst throw an error since i don't check wether the value is within range.
+ - `shutdown(val)` and `abort_shutdown` are just like their CMD counterparts. One will shut down your PC after a specified time (in minutes) and the other will abort it. I'm using NirCMD here however, since I just wanted to try it (and by try it I mean shutting off the PC when testing since I forgot an argument).
+ - `volume(val)` sets system volume to the specified amount. It accepts values from 0 to 100 and converts that to NirCMD value range. Honestly it will accept anything and at worst throw an error since i don't check wether the value is within range.
  - `audio_mute` will send a hotkey. The one in example is the one I use to mute myself on Discord. 
  - `audio_microphone`, `audio_midi`, `audio_headphones`, `audio_speakers` will use NirCMD to change the deafult audio input and/or output device. The arguments 1 and 2 mean changing the default media and communications device respectively. Without it would just change one (I think only media) and leave the other one as a default for communications. I use this to switch between my headphones and speakers, as well as 2 microphones. Note: NirCMD takes the device's name as an argument. If some devices have the same name you can rename one in the Windows Sound settings, since NirCMD takes the first one.
  - `next_song` skips a song. Uses other `pyautogui` hotkey like `'nexttrack'`.
@@ -37,7 +37,7 @@ You can try these from `make_a_wish`:
  And these, since they're seperate methods:  
  - `google` takes a POST request with `'query'` as a key and opens a new tab of your browser with the Google search.
  - `clipboard` is by far my favorite one. It will copy your iOS clipboard contents and add them to your Windows clipboard. Works kinda like continuity on Apple devices. If there is only text in clipboard it will just do that, if there is an image it's gonna save it to `UPLOAD_FOLDER`. This method also supports a share sheet shortcut. There you'd specify a filename and works for any file (as long as you provide a valid file extension). This uses a base64 encode since I'm to lazy right now to figure out other means of upload (SSH maybe?).
- - `open_file` does just that. It opens a file or directory on your PC. In shortcut you specify the filename/dirname and extension (optional). Then Everything SDK returns a list of candidates and after choosing one Explorer.exe will either open the folder containing the file, open the folder or run the .exe file.
+ - `open_file` does just that. It opens a file or directory on your PC. In shortcut you specify the filename/dirname and extension (optional). Then the EverythingSDK returns a list of candidates and after choosing one Explorer.exe will either open the folder containing the file, open the folder or run the .exe file.
  
  Obviously endpoints, method names and others are all subject to your wildest dreams.
  
