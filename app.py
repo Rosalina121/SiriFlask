@@ -47,7 +47,7 @@ def clipboard():
     if request.method == 'POST':
         toaster = ToastNotifier()
         if 'file' in request.form:
-            clip_string = request.form['image']
+            clip_string = request.form['file']
             base64_img_bytes = clip_string.encode('utf-8')
             # name specified in a share sheet
             if 'name' in request.form:
@@ -69,11 +69,12 @@ def clipboard():
                 decoded_data = base64.decodebytes(base64_img_bytes)
                 file_to_save.write(decoded_data)
                 toaster.show_toast("SiriFlask", "File saved to " + image_name)
+            return 'File sent!'
         else:
             clip_string = request.form['clip']
             os.system('echo ' + clip_string + ' | clip')
             toaster.show_toast("SiriFlask", "Clipboard: " + clip_string)
-        return 'Clipboard sent!'
+            return 'Clipboard sent!'
     return 'Issue with POST maybe?'
 
 
