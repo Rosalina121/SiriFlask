@@ -18,13 +18,13 @@ def next_song():
 
 def shutdown(value):
     time = str(value * 60)
-    os.system("V:\\Programs\\NirCMD\\nircmd.exe initshutdown \"\" " + time)
+    os.system("shutdown -s -t  " + time)
     response = 'System due to shutdown in ' + str(value) + ' minutes.'
     return response
 
 
 def abort_shutdown():
-    os.system("V:\\Programs\\NirCMD\\nircmd.exe abortshutdown")
+    os.system("shutdown -a")
     return 'Shutdown aborted.'
 
 
