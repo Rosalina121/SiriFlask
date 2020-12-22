@@ -49,3 +49,14 @@ You can try these from `make_a_wish`:
 ## Shortcuts
 Flask server is just a one side of the story. The rest are Shortcuts. All work basically by `Get contents of URL` and saying out loud the server response. Some ask for input like numbers and strings, other just do a simple GET request.  
 I'd try to update the list with some example Shortcuts as fast as possible.
+
+### Wishes
+PC Volume                  | PC Microphone           
+:-------------------------:|:-------------------------:
+![](screenshots/pc_volume.png) | ![](screenshots/pc_mic.png)
+
+
+### PC Send (and other POST ones)
+1/4|2/4|3/4|4/4
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](screenshots/pc_send1.png) | ![](screenshots/pc_send2.png) | ![](screenshots/pc_send3.png) | ![](screenshots/pc_send4.png)
