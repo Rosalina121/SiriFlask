@@ -6,19 +6,18 @@ import os
 # import win32api
 # from win32con import VK_MEDIA_PLAY_PAUSE, KEYEVENTF_EXTENDEDKEY
 from pyautogui import press, typewrite, hotkey
-
-# windows notifications
-from win10toast import ToastNotifier
+import pyautogui as pag
 
 
 def next_song():
+    pag.FAILSAFE = False
     press('nexttrack')
     return 'Skipping...'
 
 
 def shutdown(value):
     time = str(value * 60)
-    os.system("shutdown -s -t  " + time)
+    os.system("shutdown -s -t " + time)
     response = 'System due to shutdown in ' + str(value) + ' minutes.'
     return response
 
@@ -37,40 +36,49 @@ def volume(value):
 
 
 def audio_mute():
+    pag.FAILSAFE = False
     hotkey('ctrl', 'left')
     return 'Discordo!'
 
 
 def audio_microphone():
-    toaster = ToastNotifier()
+    #toaster = ToastNotifier()
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Microphone\" 1")
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Microphone\" 2")
-    toaster.show_toast("SiriFlask", "Using Microphone.")
+    #toaster.show_toast("SiriFlask", "Using Microphone.")
     return 'Listening through the built-in mic.'
 
 
 def audio_midi():
-    toaster = ToastNotifier()
+    #toaster = ToastNotifier()
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"MIDI\" 1")
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"MIDI\" 2")
-    toaster.show_toast("SiriFlask", "Using Virtual Desktop.")
+    #toaster.show_toast("SiriFlask", "Using Virtual Desktop.")
     return 'Listening through the Oculus mic.'
 
 
 def audio_headphones():
-    toaster = ToastNotifier()
+    #toaster = ToastNotifier()
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Headphones\" 1")
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Headphones\" 2")
-    toaster.show_toast("SiriFlask", "Using Headphones.")
+    #toaster.show_toast("SiriFlask", "Using Headphones.")
     return 'Now playing audio through the headphones.'
 
 
 def audio_speakers():
-    toaster = ToastNotifier()
+    #toaster = ToastNotifier()
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Speakers\" 1")
     os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Speakers\" 2")
-    toaster.show_toast("SiriFlask", "Using Speakers.")
+    #toaster.show_toast("SiriFlask", "Using Speakers.")
     return 'Now playing audio through the speakers.'
+
+
+def audio_line():
+    #toaster = ToastNotifier()
+    os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Line\" 1")
+    os.system("V:\\Programs\\NirCMD\\nircmd.exe setdefaultsounddevice \"Line\" 2")
+    #toaster.show_toast("SiriFlask", "Using Virtual Desktop headphones.")
+    return 'Now playing audio through the Quest.'
 
 
 def iTunes_open():
@@ -79,6 +87,7 @@ def iTunes_open():
 
 
 def play_pause():
+    pag.FAILSAFE = False
     # win32api.keybd_event(VK_MEDIA_PLAY_PAUSE, 0, KEYEVENTF_EXTENDEDKEY, 0)
     press("playpause")
     return 'I did it!'

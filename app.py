@@ -119,7 +119,8 @@ def make_a_wish(wish_id, value=10):
         8: partial(volume, value),
         9: next_song,
         10: partial(shutdown, value),
-        11: abort_shutdown
+        11: abort_shutdown,
+        12: audio_line
     }
     func = switch.get(wish_id, err_opt)
     return func()
